@@ -18,7 +18,8 @@ int main(void)
         TCCR0A |= 1 << WGM00 | 1 << WGM01;
         TCCR0B |= 1 << WGM02;
         OCR0A = 124;
-        sei();
+        //sei();
+		SREG|=(1<<7);
         TCCR0B |= 1 << CS02 | 1 << CS00;
         while(1)
         {
