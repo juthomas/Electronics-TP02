@@ -9,9 +9,9 @@ volatile uint32_t timerCount = 1;
 ISR(TIMER0_COMPA_vect)
 {
 		timerCount++;
-		if(timerCount > 100)
+		if(timerCount > 255)
 			timerCount = 1;
-        OCR1A = 10;
+        OCR1A = (F_CPU) * timerCount;
 }
 
 int main(void)
