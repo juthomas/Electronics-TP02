@@ -10,7 +10,8 @@
 
 int sens = 1;
 volatile uint32_t timerCount = 1;
-ISR(TIMER0_COMPA_vect)
+void vector (void) TIMER0_COMPA_vect ((signal,__INTR_ATTRS)) __VA_ARGS__; \
+    void vector (void)
 {
 		timerCount += sens;
 		if(timerCount > 255)
