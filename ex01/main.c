@@ -2,8 +2,11 @@
 # define __AVR_ATmega328P__
 # define F_CPU 16000000
 #endif
-#include <avr/interrupt.h>
 #include <avr/io.h>
+
+#define ISR(vector, ...)            \
+    void vector (void) __attribute__ ((signal,__INTR_ATTRS)) __VA_ARGS__; \
+    void vector (void)
 
 int sens = 1;
 volatile uint32_t timerCount = 1;
