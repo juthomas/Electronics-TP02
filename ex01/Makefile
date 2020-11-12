@@ -6,10 +6,10 @@ DEVICE		= atmega328p
 PROGRAMMER	= arduino
 BAUD		= 115200
 F_CPU		= 16000000 #16 Mhz quartz #2 Mhz Cpu Clock (Quartz / 8)
-COMPILE		= avr-gcc -Wall -mmcu=$(DEVICE) -DF_CPU=${F_CPU}
+COMPILE		= avr-gcc -Xpreprocessor -Wall -mmcu=$(DEVICE) -DF_CPU=${F_CPU}
 COLOR		= \0033[1;35m
 
-MUTE		= TRUE
+MUTE		= FALSE
 
 all: hex flash
 

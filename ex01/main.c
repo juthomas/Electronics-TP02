@@ -39,7 +39,8 @@ int main(void)
         TIMSK0 |= 1 << OCIE0A;
         TCCR0A |= 1 << WGM00 | 1 << WGM01;
         TCCR0B |= (1 << WGM12) | 1 << WGM02;
-        OCR0A = 6250;
+        // OCR0A = 6250;
+        OCR0A = 3125;
         //sei();
 		SREG|=(1<<7);
         TCCR0B |= 1 << CS02 | 1 << CS00;
